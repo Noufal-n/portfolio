@@ -1,7 +1,4 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
--->
+
 <!doctype html>
 <html lang="en">
 
@@ -9,22 +6,57 @@ Author URL: http://w3layouts.com
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Biodata - Personal Category Bootstrap Responsive Web Template - Contact : W3Layouts</title>
+    <title>Noufal-Contact </title>
     <!-- google font -->
     <link href="//fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
+
     <!-- Template CSS Style link -->
     <link rel="stylesheet" href="assets/css/style-starter.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 
 <body>
+
+
+
+    <style>
+        #loader {
+            display: none;
+            border: 8px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 8px solid #df001a;
+            width: 50px;
+            height: 50px;
+            animation: spin 2s linear infinite;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin-top: -25px;
+            /* Half of height */
+            margin-left: -25px;
+            /* Half of width */
+            z-index: 9999;
+            /* Ensure it's above everything else */
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+
     <!-- header -->
     <header id="site-header" class="fixed-top">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand" href="index.html">
-                    <i class="fas fa-bold"></i>.
-                </a>
+
                 <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -40,17 +72,19 @@ Author URL: http://w3layouts.com
                             <a class="nav-link" href="about.html">My Intro</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="services.html">Services</a>
+                            <a class="nav-link" href="services.html">Skills</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="services.html">Certificates</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="projects.html">Projects</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" href="contact.html">Contact</a>
                         </li>
                     </ul>
-                    <form action="#search" method="GET" class="d-flex search-header">
-                        <input class="form-control" type="search" placeholder="Enter Keyword..." aria-label="Search"
-                            required>
-                        <button class="btn btn-style" type="submit">Search</button>
-                    </form>
+
                 </div>
                 <!-- toggle switch for light and dark theme -->
                 <div class="cont-ser-position">
@@ -96,121 +130,61 @@ Author URL: http://w3layouts.com
             <div class="row contact-block">
                 <div class="col-md-6 contact-left pe-lg-5">
                     <h3 class="mb-sm-4 mb-3">Contact Info</h3>
-                    <p class="cont-para mb-sm-5 mb-4">I enjoy discussing new projects and design challenges. Please
-                        share as
-                        much info, as possible so
-                        we can get the most out of our first catch-up.</p>
+
                     <div class="cont-details">
-                        <p><i class="fas fa-map-marker-alt"></i>kollam,kerala,689695,INDIA</p>
-                        <p><i class="fas fa-phone-alt"></i><a href="tel:+91 9744116448">+91 9744116448</a></p>
+                        <p><i class="fas fa-map-marker-alt"></i>kerala,INDIA</p>
+
                         <p><i class="fas fa-envelope-open-text"></i><a href="mailto:muhammednoufaln369@mail.com"
                                 class="mail">muhammednoufaln369@mail.com</a></p>
                     </div>
                     <h4 class="mb-3 mt-5">Follow Me</h4>
                     <ul class="social-icons-contact">
+
                         <li>
-                            <a href="#twitter">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#facebook">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#linkedinin">
+                            <a href="www.linkedin.com/in/muhammednoufal0915">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="#github">
+                            <a href="https://github.com/Noufal-n">
                                 <i class="fab fa-github"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="#instagram">
+                            <a href="https://www.instagram.com/noufal.n_?igsh=eWxpeHp0NG02MDAx">
                                 <i class="fab fa-instagram"></i>
                             </a>
                         </li>
                     </ul>
                 </div>
                 <div class="col-md-6 contact-right mt-md-0 mt-5 ps-lg-0">
-                    <form action="https://sendmail.w3layouts.com/submitForm" method="post" class="signin-form">
+                    <form id="submit-form" class="signin-form">
                         <div class="input-grids">
-                            <input type="text" name="w3lName" id="w3lName" placeholder="Your Name*"
-                                class="contact-input" required="" />
-                            <input type="email" name="w3lSender" id="w3lSender" placeholder="Your Email*"
-                                class="contact-input" required="" />
-                            <input type="text" name="w3lSubect" id="w3lSubect" placeholder="Subject*"
-                                class="contact-input" required="" />
-                            <input type="text" name="w3lWebsite" id="w3lWebsite" placeholder="Website URL*"
-                                class="contact-input" required="" />
+                            <input type="text" name="name" placeholder="Your Name*" class="contact-input" required="" />
+                            <input type="email" name="email" placeholder="Your Email*" class="contact-input"
+                                required="" />
+                            <input type="number" id="mobile" name="mobile" placeholder="Mobile*" class="contact-input"
+                                required="" />
+
                         </div>
                         <div class="form-input">
-                            <textarea name="w3lMessage" id="w3lMessage" placeholder="Type your message here*"
-                                required=""></textarea>
+                            <textarea name="message" placeholder="Type your message here*" required=""></textarea>
                         </div>
-                        <button class="btn btn-style">Send Message</button>
+                        <input type="submit" value="Send Message" class="btn btn-style" />
                     </form>
                 </div>
             </div>
         </div>
     </section>
+    <div id="loader"></div>
     <!-- map -->
     <div class="map-iframe">
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d100641.30661660753!2d76.49988791583534!3d10.748343193372108!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1631512818626!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            width="100%" height="400" frameborder="0" style="border: 0px;" allowfullscreen=""></iframe>
+
     </div>
     <!-- //contact -->
 
     <!-- footer -->
-    <footer class="footer-w3ls text-center py-5">
-        <div class="container pt-4">
-            <div class="mx-auto" style="max-width:600px;">
-                <a href="index.html" class="footer-logo py-1">
-                    <i class="fas fa-bold"></i>.
-                </a>
-                <p class="mt-4 text-white">Itaque earum rerum hic tenetur asaItaque
-                    earum rerum hic tenetur asap iente delectus ac elit in
-                    coeiciendis maiores.</p>
-                <div class="social-icons-main mt-4 pb-3">
-                    <ul class="social-icons3">
-                        <li>
-                            <a href="#facebook">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#twitter">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#linkedinin">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#dribbble">
-                                <i class="fab fa-dribbble"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#instagram">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <!-- copyright -->
-            <p class="copy-right-w3 text-white mt-5 pt-4">© 2021 Biodata. All rights reserved | Design by
-                <a href="http://w3layouts.com" target="_blank"> W3layouts.</a>
-            </p>
-        </div>
-    </footer>
+
     <!-- //footer -->
 
     <!-- Js scripts -->
@@ -219,6 +193,42 @@ Author URL: http://w3layouts.com
         <span class="fas fa-level-up-alt" aria-hidden="true"></span>
     </button>
     <script>
+
+        $("#submit-form").submit((e) => {
+            e.preventDefault()
+
+
+            var regex = /^[0-9]{10}$/;
+            var mobile = document.getElementById("mobile").value
+
+            if (regex.test(mobile)) {
+
+                $('#loader').show();
+                $.ajax({
+                    url: "https://script.google.com/macros/s/AKfycbxj-NiFQ4j_SuotiMNmMj1GmosSJ5LfsoaDVq0IoaeLvxGmNWipnJnO6a6sDtG72WRySw/exec",
+                    data: $("#submit-form").serialize(),
+                    method: "post",
+
+                    success: function (response) {
+                        $('#loader').hide();
+                        alert("Form submitted successfully")
+                        window.location.reload()
+
+                    },
+                    error: function (err) {
+                        alert("Something Error")
+
+                    }
+                })
+
+            } else {
+                alert("Please enter valid mobile number")
+            }
+        })
+
+
+
+
         // When the user scrolls down 20px from the top of the document, show the button
         window.onscroll = function () {
             scrollFunction()
@@ -240,9 +250,7 @@ Author URL: http://w3layouts.com
     </script>
     <!-- //move top -->
 
-    <!-- common jquery plugin -->
-    <script src="assets/js/jquery-3.3.1.min.js"></script>
-    <!-- //common jquery plugin -->
+
 
     <!-- theme switch js (light and dark)-->
     <script src="assets/js/theme-change.js"></script>
