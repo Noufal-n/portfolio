@@ -200,8 +200,7 @@
             $.getJSON("https://api.ipify.org?format=json",
                 function (data) {
 
-                    // Displayin IP address on screen
-                    console.log(data.ip)
+                   
                     document.getElementById("ip").value = data.ip
                 })
         })
