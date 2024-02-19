@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input placeholder="first number" type="number" id="num1" />
+    <input placeholder="second number" type="number" id="num2" />
+    <button onclick="sum()" id="sum">sum</button>
+    <p style="color: red;" id="result"></p>
+    <script>
+        function sum() {
+            var num1 = document.getElementById("num1").value;
+            var num2 = document.getElementById("num2").value;
+            num1=parseInt(num1)
+           
+            num2=parseInt(num2)
+            console.log(num1,num2);
+            let res = (num1 + num2);
+            document.getElementById('result').innerHTML = res;
+
+        }
+
+
+    </script>
+</body>
+
+</html>
